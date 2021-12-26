@@ -5,3 +5,4 @@ env: {}
 includes:
   
   create:code: ./tasks/create/code/Taskfile.yml
+  verify:security: ./tasks/verify/security/Taskfile.yml

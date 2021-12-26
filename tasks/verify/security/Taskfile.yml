@@ -1,0 +1,27 @@
+version: '3'
+
+
+vars:
+  CHECK_DESC: Scan build artifact for security vulnerability
+  MAIN_TASKFILE_PATH: "../../Taskfile.yml"
+
+tasks:
+  
+  check: 
+    desc: "{{ .CHECK_DESC }}"
+    summary: |
+      SYNOPSIS: 
+        {{ .CHECK_DESC }}
+      SYNTAX
+        task {{ .TASK }}
+      PARAMETERS
+        None   
+      EXAMPLES:
+        Example 1:
+          $ task {{ .TASK }}
+    dir: tasks/verify/security
+    env:
+      TASK_NAME: "{{ .TASK }}"
+      MAIN_TASKFILE_PATH: "{{ .MAIN_TASKFILE_PATH }}"
+    cmds:
+      - ./scripts/check.sh {{ .CLI_ARGS }}

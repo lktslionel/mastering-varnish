@@ -1,0 +1,27 @@
+version: '3'
+
+
+vars:
+  DESC: Create the docker container image for varnish
+  MAIN_TASKFILE_PATH: "../../Taskfile.yml"
+
+tasks:
+  
+  compile: 
+    desc: "{{ .DESC }}"
+    summary: |
+      SYNOPSIS: 
+        {{ .DESC }}
+      SYNTAX
+        task {{ .TASK }}
+      PARAMETERS
+        None   
+      EXAMPLES:
+        Example 1:
+          $ task {{ .TASK }}
+    dir: tasks/create/code
+    env:
+      TASK_NAME: "{{ .TASK }}"
+      MAIN_TASKFILE_PATH: "{{ .MAIN_TASKFILE_PATH }}"
+    cmds:
+      - ./scripts/compile.sh {{ .CLI_ARGS }}

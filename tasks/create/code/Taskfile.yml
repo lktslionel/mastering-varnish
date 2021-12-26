@@ -2,16 +2,16 @@ version: '3'
 
 
 vars:
-  DESC: Create the docker container image for varnish
+  COMPILE_DESC: Create the docker container image for varnish
   MAIN_TASKFILE_PATH: "../../Taskfile.yml"
 
 tasks:
   
   compile: 
-    desc: "{{ .DESC }}"
+    desc: "{{ .COMPILE_DESC }}"
     summary: |
       SYNOPSIS: 
-        {{ .DESC }}
+        {{ .COMPILE_DESC }}
       SYNTAX
         task {{ .TASK }}
       PARAMETERS
